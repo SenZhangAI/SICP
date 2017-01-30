@@ -37,6 +37,7 @@
   (cond ((= exp 0) 1)
         ;这里迭代首先是用快速方法获得 a ^n 最后取余，但看上去有些怪，看上去执行顺序是一步求幂一步取余。。
         ;或者有可能恰好一步求幂一步取余也成立
+        ;答：这里边求幂边取余是为了使得运算数更小，更大的数求解更耗时
         ((even? exp) (remainder (square (expmod base (/ exp 2) n))
                                 n))
         (else (remainder (* base (expmod base (- exp 1) n))
