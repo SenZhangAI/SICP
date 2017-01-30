@@ -1,5 +1,5 @@
 #lang racket
-
+; 这也是习题1.18的解
 (define (double x) (+ x x))
 
 (define (halve x) (/ x 2))
